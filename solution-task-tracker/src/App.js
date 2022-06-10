@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
+import Tasks from "./components/Tasks";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -28,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <Header title="TASK TRACKER" />
-      <AddTask tasks={tasks} />
+      <Tasks tasks={tasks} />
     </div>
   );
 }
