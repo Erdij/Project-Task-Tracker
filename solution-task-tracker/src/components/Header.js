@@ -1,15 +1,21 @@
 import Button from "./Button";
-const Header = ({ title }) => {
-  const handleClick = () => {
-    console.log("Clicked");
-  };
+const Header = ({ title, showAddTask, toggleShow }) => {
+  // const handleClick = () => {
+  //   console.log("Clicked");
+  // };
   return (
     <div className="header">
       <h1>{title}</h1>
-      <Button
+      {/* <Button
         handleClick={handleClick}
         color="purple"
         text="Show Add Task Bar"
+      /> */}
+      <Button
+        color={showAddTask ? "red" : "purple"}
+        text={showAddTask ? "Close Add Task Bar" : "Show Add Task Bar"}
+        // handleClick={handleClick}
+        toggleShow={toggleShow}
       />
     </div>
   );

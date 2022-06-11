@@ -26,6 +26,7 @@ function App() {
       isDone: false,
     },
   ]);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   // DELETE TASK
   const deleteTask = (deletedTaskId) => {
@@ -49,11 +50,23 @@ function App() {
     );
   };
 
+  //TOGGLESHOW
+
+  const toggleShow = () => setShowAddTask(!showAddTask);
+
   return (
     <div className="container">
-      <Header title="TASK TRACKER" />
+      <Header
+        title="TASK TRACKER"
+        showAddTask={showAddTask}
+        toggleShow={toggleShow}
+      />
       <AddTask addTask={addTask} />
-      <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />
+      ) : (
+        <h2 style={{ textAlign: "center" }}> NO TASK TO SHOW</h2> //gösterdiğimiz yerde ternary yapı kullanırız.
+      )}
     </div>
   );
 }
