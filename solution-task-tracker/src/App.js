@@ -38,11 +38,22 @@ function App() {
     const addNewTask = { id, ...newTask };
     setTasks([...tasks, addNewTask]);
   };
+
+  //TOGGLE DONE
+  const toggleDone = (toggleDoneId) => {
+    // console.log("double clicked", toggleDoneId);
+    setTasks(
+      tasks.map((task) =>
+        task.id === toggleDoneId ? { ...task, isDone: !task.isDone } : task
+      )
+    );
+  };
+
   return (
     <div className="container">
       <Header title="TASK TRACKER" />
       <AddTask addTask={addTask} />
-      <Tasks tasks={tasks} deleteTask={deleteTask} />
+      <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />
     </div>
   );
 }

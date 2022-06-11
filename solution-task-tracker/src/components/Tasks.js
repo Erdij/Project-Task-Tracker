@@ -2,11 +2,11 @@ import React from "react";
 import AddTask from "./AddTask";
 import Duty from "./Duty";
 
-const Tasks = ({ tasks, deleteTask, addTask }) => {
+const Tasks = ({ tasks, deleteTask, toggleDone }) => {
   return (
     <div>
       {tasks.map((task) => (
-        <Duty duty={task} deleteTask={deleteTask} />
+        <Duty duty={task} deleteTask={deleteTask} toggleDone={toggleDone} />
       ))}
     </div>
   );
