@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: bisque;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .done {
   border-left: 10px solid rgb(102, 18, 77);
-  text-decoration:line-through;
+  text-decoration: line-through;
   background-color: gray;
 }
 
