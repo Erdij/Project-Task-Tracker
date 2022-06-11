@@ -36,6 +36,7 @@ function App() {
   return (
     <div className="container">
       <Header title="TASK TRACKER" />
+      <AddTask />
       <Tasks tasks={tasks} deleteTask={deleteTask} />
     </div>
   );

@@ -1,6 +1,9 @@
-import React from "react";
+import { useState } from "react";
 
 const AddTask = () => {
+  const [text, setText] = useState("");
+  const [day, setDay] = useState("");
+
   return (
     <form className="add-form">
       <div className="form-control">
@@ -11,6 +14,7 @@ const AddTask = () => {
           type="text"
           placeholder="AddTask"
           required
+          onChange={(e) => setText(e.target.value)}
         />
       </div>
       <div className="form-control">
@@ -21,6 +25,7 @@ const AddTask = () => {
           type="text"
           placeholder="Add Day & Time"
           required
+          onChange={(e) => setDay(e.target.value)}
         />
       </div>
       <input type="submit" value="Save Task" className="btn btn-block" />
